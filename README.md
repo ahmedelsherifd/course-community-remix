@@ -12,27 +12,16 @@ npm run dev
 
 This starts your app in development mode, rebuilding assets on file changes.
 
-## Deployment
+## Install
 
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
+First , clone repo
 
 ```sh
-npm start
+git clone https://github.com/ahmedelsherifd/course-community-remix
 ```
 
-Now you'll need to pick a host to deploy it to.
+Then install dependencies:
 
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
+```sh
+npm install
+```
