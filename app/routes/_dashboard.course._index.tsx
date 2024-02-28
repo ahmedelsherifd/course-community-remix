@@ -28,7 +28,23 @@ export default function Questions() {
         </div>
         <div>
           {questions.map((question) => (
-            <div key={question.id}>{question.text}</div>
+            <div key={question.id} className="bg-white mt-4 ">
+              <div className="px-6 py-4">{question.text}</div>
+              <div className="flex justify-stretch border-t">
+                <button
+                  type="button"
+                  className="text-gray-900 w-full bg-white border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                >
+                  Answers
+                </button>
+                <button
+                  type="button"
+                  className="text-gray-900 w-full bg-white  border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                >
+                  Share
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </div>

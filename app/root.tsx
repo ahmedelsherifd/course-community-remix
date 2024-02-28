@@ -19,7 +19,7 @@ export const links: LinksFunction = () => [
 if (process.env.NODE_ENV === "development") {
   OpenAPI.BASE = "http://localhost:8000";
 } else {
-  OpenAPI.BASE = "https://course-community-6-leader.koyeb.app/";
+  OpenAPI.BASE = "https://course-community-6-leader.koyeb.app";
 }
 
 export default function App() {
