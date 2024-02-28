@@ -20,6 +20,12 @@ First , clone repo
 git clone https://github.com/ahmedelsherifd/course-community-remix
 ```
 
+Select dir
+
+```sh
+cd course-community-remix
+```
+
 Then install dependencies:
 
 ```sh

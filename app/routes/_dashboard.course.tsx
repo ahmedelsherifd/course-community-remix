@@ -1,5 +1,5 @@
 import { json } from "@remix-run/node";
-import { Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
 import { Header } from "~/components/Course/Header";
 import { Navigation } from "~/components/Course/Navigation";
@@ -61,13 +61,18 @@ export default function Course() {
   const { name, navigation, topics, imgSrc, subcommunites } =
     useLoaderData<typeof loader>();
   return (
-    <>
-      <div>Course detail page</div>
-      <Header name={name} imgSrc={imgSrc} />
-      <Topics topics={topics} />
-      <Navigation navigation={navigation} />
-      <SubCommunites subs={subcommunites} />
-      <Outlet />
-    </>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="flex justify-between">
+        <Topics topics={topics} />
+
+        <Outlet />
+
+        <SubCommunites subs={subcommunites} />
+      </div>
+
+      {/* <Header name={name} imgSrc={imgSrc} /> */}
+
+      {/* <Navigation navigation={navigation} /> */}
+    </div>
   );
 }

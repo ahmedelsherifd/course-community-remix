@@ -8,13 +8,17 @@
     "dev": "remix dev --manual",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/index.js",
+    "generate-client": "openapi --input http://localhost:8000/openapi.json --output ./client",
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "@remix-run/css-bundle": "^2.7.2",
     "@remix-run/node": "^2.7.2",
     "@remix-run/react": "^2.7.2",
     "@remix-run/serve": "^2.7.2",
+    "clsx": "^2.1.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -22,6 +26,7 @@
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.2",
     "@remix-run/dev": "^2.7.2",
+    "@tailwindcss/forms": "^0.5.7",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
@@ -31,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "openapi-typescript-codegen": "^0.27.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.1.6"
   },
