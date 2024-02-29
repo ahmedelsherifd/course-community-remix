@@ -5,6 +5,7 @@ import {
   ExclamationTriangleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Form } from "@remix-run/react";
 
 export function CreateQuestionModal({
   open,
@@ -62,38 +63,47 @@ export function CreateQuestionModal({
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
               </div>
-              <div className="sm:flex sm:items-start">
-                {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+              <Form action="/createquestion" method="post">
+                <div className="sm:flex sm:items-start w-full">
+                  {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                   <ExclamationTriangleIcon
                     className="h-6 w-6 text-red-600"
                     aria-hidden="true"
                   />
                 </div> */}
-                <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg leading-6 font-medium text-gray-900"
-                  >
-                    Ask question
-                  </Dialog.Title>
-                  <div className="mt-2">{/* <Editor /> */}</div>
+                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-lg leading-6 font-medium text-gray-900"
+                    >
+                      Ask question
+                    </Dialog.Title>
+                    <div className="mt-2 w-full">
+                      <textarea
+                        rows={4}
+                        name="text"
+                        id="text"
+                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                {/* <button
+                <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                  {/* <button
                   type="button"
                   class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-500 text-white hover:bg-yellow-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 >
                   Button
                 </button> */}
-                <button
-                  type="button"
-                  className="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  onClick={() => setOpen(false)}
-                >
-                  Submit
-                </button>
-              </div>
+                  <button
+                    type="submit"
+                    className="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    onClick={() => setOpen(false)}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </Form>
             </div>
           </Transition.Child>
         </div>

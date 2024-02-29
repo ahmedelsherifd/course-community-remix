@@ -8,10 +8,12 @@ import type { LinksFunction } from "@remix-run/node"; // or cloudflare/deno
 // import styles from "~/components/Editor/styles.css";
 
 // export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
-
+import { QuestionsService } from "client";
 export const loader = async () => {
+  const data = await QuestionsService.getQuestions();
   return json({
     questions: [
+      ...data.map((q) => ({ id: q.id, text: q.name })),
       {
         id: "1",
         text: `Prove by induction that every connected graph 
@@ -23,7 +25,7 @@ export const loader = async () => {
 
 export default function Questions() {
   const { questions } = useLoaderData<typeof loader>();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <>
       <div className="px-6 max-w-lg">
