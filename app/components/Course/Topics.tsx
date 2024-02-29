@@ -5,9 +5,9 @@ export function Topics({ topics }: { topics: { name: string; to: string }[] }) {
     <div className="flex">
       <div className="flex flex-col items-center h-screen  bg-white shadow w-60">
         <div className="space-y-3">
-          <div className="flex pt-4 pb-6 pl-6 items-center bg-purple-500 ">
+          {/* <div className="flex pt-4 pb-6 pl-6 items-center bg-purple-500 ">
             <h1 className="text-xl text-white font-bold ">Algorithms-6006MI</h1>
-          </div>
+          </div> */}
           <div className="flex-1  ">
             <ul className="pt-0  pb-4 pl-8 space-y-1 text-base">
               <div>

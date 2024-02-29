@@ -37,15 +37,15 @@ export const loader = async () => {
       },
       {
         name: "Videos",
-        to: "/course",
+        to: "/course/videos",
       },
       {
         name: "Notes",
-        to: "/course",
+        to: "/course/notes",
       },
       {
         name: "Resources",
-        to: "/course",
+        to: "/course/resources",
       },
     ],
     subcommunites: [
@@ -61,18 +61,19 @@ export default function Course() {
   const { name, navigation, topics, imgSrc, subcommunites } =
     useLoaderData<typeof loader>();
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="flex justify-between">
-        <Topics topics={topics} />
+    <>
+      <Navigation navigation={navigation} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex justify-between">
+          <Topics topics={topics} />
 
-        <Outlet />
+          <Outlet />
 
-        <SubCommunites subs={subcommunites} />
+          <SubCommunites subs={subcommunites} />
+        </div>
+
+        {/* <Header name={name} imgSrc={imgSrc} /> */}
       </div>
-
-      {/* <Header name={name} imgSrc={imgSrc} /> */}
-
-      {/* <Navigation navigation={navigation} /> */}
-    </div>
+    </>
   );
 }

@@ -10,13 +10,15 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="p-16">
-      <h1 className="text-3xl font-bold">Computer science</h1>
-      <div
-        className="border rounded-lg bg-white px-6 py-4 mt-4 w-60
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="">
+        <h1 className="text-3xl font-bold">Computer science</h1>
+        <div
+          className="border rounded-lg bg-white px-6 py-4 mt-4 w-60
       "
-      >
-        <Link to="/course">Algorithms</Link>
+        >
+          <Link to="/course">Algorithms</Link>
+        </div>
       </div>
 
       {/* <ul>
