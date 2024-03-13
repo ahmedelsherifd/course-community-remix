@@ -2,8 +2,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type QuestionInput = {
+export type AnswerInput = {
     text: string;
-    community_id: number;
+    question_id: number;
 };
 

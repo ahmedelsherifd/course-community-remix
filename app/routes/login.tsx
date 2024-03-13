@@ -46,7 +46,7 @@ export async function action({ request }: ActionFunctionArgs) {
       },
     });
   } catch (error) {
-    return redirect("/", {
+    return redirect("/login", {
       headers: {
         "Set-Cookie": await destroySession(session),
       },

@@ -3,8 +3,10 @@ import clsx from "clsx";
 
 export function Navigation({
   navigation,
+  name,
 }: {
   navigation: { name: string; to: string }[];
+  name: string;
 }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
@@ -15,7 +17,7 @@ export function Navigation({
               src="https://i.postimg.cc/Mpt4hFvv/images-1.jpg"
               className="h-8 w-8 rounded-full"
             ></img>
-            <h1 className="font-bold ">Algorithms-6.006 Tanta</h1>
+            <h1 className="font-bold ">{name}</h1>
           </div>
 
           <div className="flex items-center pl-4 sm:ml-6 sm:flex sm:space-x-8">

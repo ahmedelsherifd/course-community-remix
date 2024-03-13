@@ -2,8 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type QuestionInput = {
-    text: string;
-    community_id: number;
+export type CourseInput = {
+    name: string;
 };
 

@@ -191,12 +191,12 @@ export default function CreateAccount() {
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                Create an account
+                Create an Account
               </button>
             </div>
           </Form>
           <p className="mt-10 text-center text-sm text-gray-500">
-            Already have account?{" "}
+            Already have Account?
             <Link
               to="/"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"

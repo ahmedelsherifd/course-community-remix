@@ -1,6 +1,13 @@
 import { Link } from "@remix-run/react";
+import { Unit } from "client";
 
-export function Topics({ topics }: { topics: { name: string; to: string }[] }) {
+export function Topics({
+  topics,
+  createUnitLink,
+}: {
+  topics: Unit[];
+  createUnitLink: string;
+}) {
   return (
     <div className="flex">
       <div className="flex flex-col items-center h-screen  bg-white shadow w-60">
@@ -8,11 +15,12 @@ export function Topics({ topics }: { topics: { name: string; to: string }[] }) {
           {/* <div className="flex pt-4 pb-6 pl-6 items-center bg-purple-500 ">
             <h1 className="text-xl text-white font-bold ">Algorithms-6006MI</h1>
           </div> */}
+          <Link to={createUnitLink}>Create unit</Link>
           <div className="flex-1  ">
             <ul className="pt-0  pb-4 pl-8 space-y-1 text-base">
               <div>
                 {topics.map((topic) => (
-                  <Link key={topic.to} to={topic.to}>
+                  <Link key={topic.id} to="#">
                     <li className="list-item ">
                       <a href="#" className="list-item  p-5 rounded-md "></a>
                     </li>
