@@ -2,8 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type QuestionInput = {
-    text: string;
-    community_id: number;
+import type { Community } from './Community';
+export type Course = {
+    id: number;
+    name: string;
+    community: Community;
 };
 

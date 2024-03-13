@@ -2,8 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Answer } from './Answer';
 export type Question = {
     id: number;
-    name: string;
+    text: string;
+    answers: Array<Answer>;
 };
 

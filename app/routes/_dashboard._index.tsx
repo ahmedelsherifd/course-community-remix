@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
+import { CoursesService } from "client";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,17 +9,28 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader = async () => {
+  return {
+    courses: await CoursesService.getCourses(),
+  };
+};
+
 export default function Index() {
+  const { courses } = useLoaderData<typeof loader>();
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="">
         <h1 className="text-3xl font-bold">Computer science</h1>
-        <div
-          className="border rounded-lg bg-white px-6 py-4 mt-4 w-60
+        {courses.map((course) => (
+          <div
+            key={course.id}
+            className="border rounded-lg bg-white px-6 py-4 mt-4 w-60
       "
-        >
-          <Link to="/course">Algorithms</Link>
-        </div>
+          >
+            <Link to={`/courses/${course.community.id}`}>{course.name}</Link>
+          </div>
+        ))}
       </div>
 
       {/* <ul>

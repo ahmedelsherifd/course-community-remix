@@ -2,6 +2,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Answer } from '../models/Answer';
+import type { AnswerInput } from '../models/AnswerInput';
 import type { Question } from '../models/Question';
 import type { QuestionInput } from '../models/QuestionInput';
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -10,27 +12,55 @@ import { request as __request } from '../core/request';
 export class QuestionsService {
     /**
      * Get Questions
+     * @param communityId
      * @returns Question Successful Response
      * @throws ApiError
      */
-    public static getQuestions(): CancelablePromise<Array<Question>> {
+    public static getQuestions(
+        communityId?: (number | null),
+    ): CancelablePromise<Array<Question>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/questions/',
+            query: {
+                'community_id': communityId,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
         });
     }
     /**
      * Create Question
      * @param requestBody
-     * @returns QuestionInput Successful Response
+     * @returns Question Successful Response
      * @throws ApiError
      */
     public static createQuestion(
         requestBody: QuestionInput,
-    ): CancelablePromise<QuestionInput> {
+    ): CancelablePromise<Question> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/questions/',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+    /**
+     * Create Answer
+     * @param requestBody
+     * @returns Answer Successful Response
+     * @throws ApiError
+     */
+    public static createAnswer(
+        requestBody: AnswerInput,
+    ): CancelablePromise<Answer> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/answers/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {

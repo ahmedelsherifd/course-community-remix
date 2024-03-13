@@ -1,51 +1,35 @@
-import { json } from "@remix-run/node";
+import { ActionFunctionArgs, json } from "@remix-run/node";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
+import { CoursesService } from "client";
 
 import { Header } from "~/components/Course/Header";
 import { Navigation } from "~/components/Course/Navigation";
 import { SubCommunites } from "~/components/Course/SubCommunites";
 import { Topics } from "~/components/Course/Topics";
 
-export const loader = async () => {
+export const loader = async ({ request, params }: ActionFunctionArgs) => {
+  const course = await CoursesService.getCourseByCommunityId(
+    parseInt(String(params.community_id))
+  );
   return json({
-    name: "MIT Algorithms-6-006",
     imgSrc: "",
-    questions: [
-      {
-        text: `Prove by induction that every connected graph 
-                        G=(V, E) for which |E| = |V| -1 is acyclic`,
-      },
-    ],
-    topics: [
-      {
-        name: "Week 1: Introduction and Data Structure",
-        to: "#",
-      },
-      {
-        name: "Week 2",
-        to: "#",
-      },
-      {
-        name: "Week 3",
-        to: "#",
-      },
-    ],
+    course: course,
     navigation: [
       {
         name: "Questions",
-        to: "/course",
+        to: `/courses/${course.community.id}`,
       },
       {
         name: "Videos",
-        to: "/course/videos",
+        to: `/courses/${course.community.id}/videos`,
       },
       {
         name: "Notes",
-        to: "/course/notes",
+        to: `/courses/${course.community.id}/notes`,
       },
       {
         name: "Resources",
-        to: "/course/resources",
+        to: `/courses/${course.community.id}/resources`,
       },
     ],
     subcommunites: [
@@ -58,14 +42,23 @@ export const loader = async () => {
 };
 
 export default function Course() {
-  const { name, navigation, topics, imgSrc, subcommunites } =
+  const { navigation, imgSrc, subcommunites, course } =
     useLoaderData<typeof loader>();
+
+  const {
+    community: { units },
+    id,
+    name,
+  } = course;
   return (
     <>
-      <Navigation navigation={navigation} />
+      <Navigation navigation={navigation} name={course.name} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between">
-          <Topics topics={topics} />
+          <Topics
+            topics={units}
+            createUnitLink={`/createunit?community_id=${course.community.id}`}
+          />
 
           <Outlet />
 

@@ -33,7 +33,10 @@ const navigation = [
   { name: "Teams", href: "#", current: false },
   { name: "Directory", href: "#", current: false },
 ];
-const userNavigation = [{ name: "Sign out", href: "/logout" }];
+const userNavigation = [
+  { name: "Sign out", to: "/logout" },
+  { name: "Create course", to: "/createcourse" },
+];
 
 export function Header({
   user,
@@ -58,13 +61,13 @@ export function Header({
               <div className="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
                 <div className="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
                   <div className="flex-shrink-0 flex items-center">
-                    <a href="#">
+                    <Link to="/">
                       <img
                         className="block h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
                         alt="Workflow"
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
@@ -104,6 +107,7 @@ export function Header({
                 </div>
                 <div className="flex items-center justify-end lg:flex lg:items-center lg:justify-end xl:col-span-4">
                   {/* Profile dropdown */}
+
                   {user ? (
                     <>
                       <a
@@ -113,6 +117,14 @@ export function Header({
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
                       </a>
+                      <Link
+                        to="/createcourse"
+                        className={clsx(
+                          "block px-4 py-2 text-sm text-gray-700 w-full"
+                        )}
+                      >
+                        Create Course
+                      </Link>
                       <Menu as="div" className="flex-shrink-0 relative ml-5">
                         <div className="flex item">
                           <p className="mr-2">{user.name}</p>
@@ -138,36 +150,48 @@ export function Header({
                           leaveTo="transform opacity-0 scale-95"
                         >
                           <Menu.Items className="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 focus:outline-none">
-                            {userNavigation.map((item) => (
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <Form action="/logout" method="post">
-                                    <button
-                                      type="submit"
-                                      className={clsx(
-                                        active ? "bg-gray-100" : "",
-                                        "block px-4 py-2 text-sm text-gray-700 w-full"
-                                      )}
-                                    >
-                                      Sign out
-                                    </button>
-                                  </Form>
-                                )}
-                              </Menu.Item>
-                              // <Menu.Item key={item.name}>
-                              //   {({ active }) => (
-                              //     <Link
-                              //       to={item.href}
-                              //       className={clsx(
-                              //         active ? "bg-gray-100" : "",
-                              //         "block py-2 px-4 text-sm text-gray-700"
-                              //       )}
-                              //     >
-                              //       {item.name}
-                              //     </Link>
-                              //   )}
-                              // </Menu.Item>
-                            ))}
+                            <Menu.Item>
+                              {({ active }) => (
+                                <Link
+                                  to="/createcourse"
+                                  className={clsx(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-700 w-full"
+                                  )}
+                                >
+                                  Create Course
+                                </Link>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <Form action="/logout" method="post">
+                                  <button
+                                    type="submit"
+                                    className={clsx(
+                                      active ? "bg-gray-100" : "",
+                                      "block px-4 py-2 text-sm text-gray-700 w-full"
+                                    )}
+                                  >
+                                    Sign out
+                                  </button>
+                                </Form>
+                              )}
+                            </Menu.Item>
+
+                            {/* <Menu.Item key={item.name}>
+                              {({ active }) => (
+                                <Link
+                                  to={item.href}
+                                  className={clsx(
+                                    active ? "bg-gray-100" : "",
+                                    "block py-2 px-4 text-sm text-gray-700"
+                                  )}
+                                >
+                                  {item.name}
+                                </Link>
+                              )}
+                            </Menu.Item> */}
                           </Menu.Items>
                         </Transition>
                       </Menu>
