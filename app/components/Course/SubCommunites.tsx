@@ -10,8 +10,8 @@ export function SubCommunites({
       <div className="flex-col justify-start  gap-3 inline-flex">
         <div className="text-xl font-bold ">POPULAR COMMUNITIES</div>
         <div className="flex-col justify-start items-start gap-2.5 flex">
-          {subs.map((sub) => (
-            <>
+          {subs.map((sub, index) => (
+            <div key={index}>
               <div className="px-3.5 py-1.5 bg-white rounded-full flex-col justify-start items-start gap-2.5 flex">
                 <div className="justify-start  gap-5 inline-flex">
                   <div className="justify-start  gap-1.5 flex text-start">
@@ -28,7 +28,7 @@ export function SubCommunites({
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           ))}
 
           <div className="px-4 py-1 bg-white rounded-full border border-orange-500 justify-center  gap-2.5 inline-flex">
