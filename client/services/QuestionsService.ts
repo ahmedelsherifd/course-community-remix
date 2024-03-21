@@ -6,6 +6,7 @@ import type { Answer } from '../models/Answer';
 import type { AnswerInput } from '../models/AnswerInput';
 import type { Question } from '../models/Question';
 import type { QuestionInput } from '../models/QuestionInput';
+import type { QuestionVoteInput } from '../models/QuestionVoteInput';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -42,6 +43,25 @@ export class QuestionsService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/questions/',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+    /**
+     * Create Vote On Question
+     * @param requestBody
+     * @returns number Successful Response
+     * @throws ApiError
+     */
+    public static createVoteOnQuestion(
+        requestBody: QuestionVoteInput,
+    ): CancelablePromise<number> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/questions/votes/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {

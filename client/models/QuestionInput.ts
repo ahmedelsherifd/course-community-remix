@@ -2,8 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { QuestionChoiceInput } from './QuestionChoiceInput';
 export type QuestionInput = {
     text: string;
     community_id: number;
+    choices?: (Array<QuestionChoiceInput> | null);
 };
 

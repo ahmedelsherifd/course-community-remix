@@ -2,11 +2,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { QuestionChoice } from './QuestionChoice';
-export type Answer = {
+export type QuestionChoice = {
     id: number;
     text: string;
-    vote?: (number | null);
-    choices: Array<QuestionChoice>;
 };
 

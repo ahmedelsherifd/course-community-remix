@@ -6,6 +6,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Form } from "@remix-run/react";
+import { Disclosure } from "@headlessui/react";
 
 export function CreateQuestionModal({
   open,
@@ -90,6 +91,96 @@ export function CreateQuestionModal({
                     </div>
                   </div>
                 </div>
+                {/* ************************************** */}
+                <div className="w-full px-4 pt-6 pb-6">
+                  <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
+                    <Disclosure>
+                      {({ open }) => (
+                        <>
+                          <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-gray-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                            <span>Is it a multiple choice question?</span>
+                          </Disclosure.Button>
+                          <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-900">
+                            <div>
+                              <label
+                                htmlFor="ans1"
+                                className="block text-lg font-medium text-gray-900"
+                              >
+                                Choice (a) :
+                              </label>
+                              <div className="mt-1 pb-4">
+                                <input
+                                  id="ans1"
+                                  name="ans1"
+                                  type="ans1"
+                                  placeholder="(a)"
+                                  required
+                                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                              </div>
+                            </div>
+
+                            <div>
+                              <label
+                                htmlFor="ans2"
+                                className="block text-lg font-medium text-gray-900"
+                              >
+                                Choice (b) :
+                              </label>
+                              <div className="mt-1 pb-4">
+                                <input
+                                  id="ans2"
+                                  name="ans2"
+                                  type="ans2"
+                                  placeholder="(b)"
+                                  required
+                                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                              </div>
+                            </div>
+
+                            <div>
+                              <label
+                                htmlFor="ans3"
+                                className="block text-lg font-medium text-gray-900"
+                              >
+                                Choice (c) :
+                              </label>
+                              <div className="mt-1 pb-4">
+                                <input
+                                  id="ans3"
+                                  name="ans3"
+                                  type="ans3"
+                                  placeholder="(c)"
+                                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                              </div>
+                            </div>
+
+                            <div>
+                              <label
+                                htmlFor="ans4"
+                                className="block text-lg font-medium text-gray-900"
+                              >
+                                Choice (d) :
+                              </label>
+                              <div className="mt-1 pb-4">
+                                <input
+                                  id="ans4"
+                                  name="ans4"
+                                  type="ans4"
+                                  placeholder="(d)"
+                                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                              </div>
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                </div>
+                {/* ************************************************** */}
                 <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                   {/* <button
                   type="button"
