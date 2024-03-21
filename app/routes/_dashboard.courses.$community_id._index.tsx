@@ -137,14 +137,16 @@ export function AnswerListItem({ answer }: { answer: Answer }) {
       <div>
         {answer.choices?.length > 0 && (
           <div>
-            <div>Answer</div>
+            <div className="underline">Answer</div>
             {answer.choices?.map((choice) => (
               <div key={choice.id}>{choice.choice.text}</div>
             ))}
           </div>
         )}
         <div>
-          {answer.choices?.length > 0 && <div>Explantion</div>}
+          {answer.choices?.length > 0 && (
+            <div className="underline">Explantion</div>
+          )}
           <div>{answer.text}</div>
         </div>
       </div>
