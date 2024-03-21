@@ -2,11 +2,11 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { QuestionChoice } from './QuestionChoice';
+import type { AnswerChoice } from './AnswerChoice';
 export type Answer = {
     id: number;
     text: string;
     vote?: (number | null);
-    choices: Array<QuestionChoice>;
+    choices: Array<AnswerChoice>;
 };
 

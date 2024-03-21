@@ -17,10 +17,12 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
   const formData = await request.formData();
   const text = String(formData.get("text"));
+  const choices = formData.getAll("choice");
   const question_id = parseInt(String(formData.get("question_id")));
   await QuestionsService.createAnswer({
     question_id: question_id,
     text: text,
+    choices: choices.map((choice) => parseInt(String(choice))),
   });
   return redirect(`/courses/${community_id}`);
 };

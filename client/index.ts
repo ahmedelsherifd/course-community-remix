@@ -8,6 +8,7 @@ export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { Answer } from './models/Answer';
+export type { AnswerChoice } from './models/AnswerChoice';
 export type { AnswerInput } from './models/AnswerInput';
 export type { AnswerVoteInput } from './models/AnswerVoteInput';
 export type { Body_login_for_access_token } from './models/Body_login_for_access_token';
