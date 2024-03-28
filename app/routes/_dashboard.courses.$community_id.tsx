@@ -20,6 +20,10 @@ export const loader = async ({ request, params }: ActionFunctionArgs) => {
         to: `/courses/${course.community.id}`,
       },
       {
+        name: "Posts",
+        to: `/courses/${course.community.id}/posts`,
+      },
+      {
         name: "Videos",
         to: `/courses/${course.community.id}/videos`,
       },

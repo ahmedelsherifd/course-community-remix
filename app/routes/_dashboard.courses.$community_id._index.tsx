@@ -26,6 +26,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 export default function Questions() {
   const { questions, community_id } = useLoaderData<typeof loader>();
   const [open, setOpen] = useState(false);
+
   return (
     <>
       <div className="px-6 w-full max-w-lg ">
@@ -138,8 +139,8 @@ export function AnswerListItem({ answer }: { answer: Answer }) {
         {answer.choices?.length > 0 && (
           <div>
             <div className="underline">Answer</div>
-            {answer.choices?.map((choice) => (
-              <div key={choice.id}>{choice.choice.text}</div>
+            {answer.choices?.map((choice, index) => (
+              <div key={index}>{choice.choice.text}</div>
             ))}
           </div>
         )}

@@ -16,6 +16,8 @@ export type { Community } from './models/Community';
 export type { Course } from './models/Course';
 export type { CourseInput } from './models/CourseInput';
 export type { HTTPValidationError } from './models/HTTPValidationError';
+export type { Post } from './models/Post';
+export type { PostInput } from './models/PostInput';
 export type { Question } from './models/Question';
 export type { QuestionChoice } from './models/QuestionChoice';
 export type { QuestionChoiceInput } from './models/QuestionChoiceInput';
@@ -32,6 +34,7 @@ export type { ValidationError } from './models/ValidationError';
 
 export { AnswersService } from './services/AnswersService';
 export { CoursesService } from './services/CoursesService';
+export { PostsService } from './services/PostsService';
 export { QuestionsService } from './services/QuestionsService';
 export { SubcommunitesService } from './services/SubcommunitesService';
 export { UnitsService } from './services/UnitsService';

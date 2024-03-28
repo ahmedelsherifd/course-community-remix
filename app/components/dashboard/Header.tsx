@@ -64,7 +64,8 @@ export function Header({
                     <Link to="/">
                       <img
                         className="block h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                        //src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                        src="https://i.postimg.cc/tgXHbMFn/logo-3.png"
                         alt="Workflow"
                       />
                     </Link>

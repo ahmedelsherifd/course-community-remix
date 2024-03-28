@@ -43,7 +43,119 @@ export default function () {
                 />
               </div>
             </div>
-
+            <div>
+              <label
+                htmlFor="Category"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Category
+              </label>
+              <select
+                id="Category"
+                name="Category"
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                defaultValue="Computer science"
+              >
+                <option>Computer Science</option>
+                <option>physics</option>
+                <option>Mathematics</option>
+                <option>Chemistry </option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="University"
+                className="block text-sm font-medium text-gray-700"
+              >
+                University
+              </label>
+              <select
+                id="university"
+                name="university"
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                defaultValue="Tanta"
+              >
+                <option>Tanta </option>
+                <option>Cairo</option>
+                <option>Alexandria</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="Faculty of "
+                className="block text-sm font-medium text-gray-700"
+              >
+                College
+              </label>
+              <select
+                id="faculty of"
+                name="Faculty of"
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                defaultValue="Engineering"
+              >
+                <option>Engineering</option>
+                <option>science</option>
+                <option>Education</option>
+                <option>Medecine </option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="Level"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Level
+              </label>
+              <select
+                id="Level"
+                name="Level"
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                defaultValue="Zero"
+              >
+                <option>zero</option>
+                <option>First</option>
+                <option>Second</option>
+                <option>Third</option>
+                <option>Fourth</option>
+                <option>Master</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="Semester"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Semester
+              </label>
+              <select
+                id="Semester"
+                name="Semester"
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                defaultValue="Fall"
+              >
+                <option>Fall</option>
+                <option>Spring</option>
+                <option>Summer</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="Course Instructor"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Instructor
+              </label>
+              <select
+                id="Course Instructor"
+                name="Course Instructor"
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                defaultValue="Dr/Sayed Sallam"
+              >
+                <option>Dr El Sayed Sallam</option>
+                <option>Dr Amany Sarhan </option>
+                <option>Dr Tahani Allam</option>
+              </select>
+            </div>
             <div>
               <button
                 type="submit"
